@@ -25,10 +25,12 @@ export default function Home({ blog }) {
           <div className={styles.grid} key={post.id}>
             <a href="https://nextjs.org/docs" className={styles.card}>
               <h2>{post.title}</h2>
-              <p>Created at</p>
-              <p>生産者</p>
-              <p>AOC</p>
-              <p>Vintage</p>
+              <p>生産者: {post.producer}</p>
+              <p>生産国: {post.country}</p>
+              <p>原産地呼称: {post.aoc}</p>
+              <p>ヴィンテージ: {post.vintage}</p>
+              <p>ぶどう品種: {post.grapes}</p>
+              <p>投稿日: {post.publishedAt}</p> 
             </a>
           </div>
         ))}
