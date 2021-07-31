@@ -8,7 +8,7 @@ This is my personal wine blog site
 
 - Framework: Next.js
 - Main language: TypeScript
-- CMS: contentful
+- CMS: microCMS
 - Hosting: Vercel
 - To be added more...
 
