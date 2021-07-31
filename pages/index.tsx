@@ -1,8 +1,10 @@
+import { client } from "../libs/client";
+
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ blog }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +23,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Wine Name</h2>
+            <h2>{blog[0].title}</h2>
             <p>Created at</p>
             <p>生産者</p>
             <p>AOC</p>
@@ -70,3 +72,14 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  // Todo: type should be changed
+  const data: any = await client.get({ endpoint: "blog" });
+
+  return {
+    props: {
+      blog: data.contents,
+    },
+  };
+};
