@@ -2,7 +2,8 @@ import { client } from "../../libs/client";
 
 import styles from "../../styles/Blog.module.css";
 
-export default function BlogId({ blog }) {
+// Todo: update type
+export default function BlogId({ blog }: any) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
