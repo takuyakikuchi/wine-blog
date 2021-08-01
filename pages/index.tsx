@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ blog }) {
+// Todo: update type
+export default function Home({ blog }: any) {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,7 +24,9 @@ export default function Home({ blog }) {
         </p>
 
         <div className={styles.grid}>
-        {blog.map((post) => (
+
+        {/* Todo: update type */}
+        {blog.map((post: any) => (
           <Link href={`/blog/${post.id}`} key={post.id}>
             <a className={styles.card}>
               <h2>{post.title}</h2>
