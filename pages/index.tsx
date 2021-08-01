@@ -2,6 +2,7 @@ import { client } from "../libs/client";
 
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ blog }) {
@@ -21,9 +22,10 @@ export default function Home({ blog }) {
           I write a blog to record tasting comments and some learnings about wine!
         </p>
 
+        <div className={styles.grid}>
         {blog.map((post) => (
-          <div className={styles.grid} key={post.id}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
+          <Link href={`/blog/${post.id}`} key={post.id}>
+            <a className={styles.card}>
               <h2>{post.title}</h2>
               <p>生産者: {post.producer}</p>
               <p>生産国: {post.country}</p>
@@ -32,8 +34,9 @@ export default function Home({ blog }) {
               <p>ぶどう品種: {post.grapes}</p>
               <p>投稿日: {post.publishedAt}</p> 
             </a>
-          </div>
+          </Link>
         ))}
+        </div>
         </main>
 
       <footer className={styles.footer}>
