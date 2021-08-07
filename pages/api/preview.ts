@@ -6,11 +6,11 @@ const preview = async (req: any, res: any) => {
     return res.status(404).end();
   }
 
-  const content = await client.get({
+  const content: any = await client.get({
     endpoint: "blog",
     contentId: req.query.slug,
     queries: {draftKey: req.query.draftKey}
-  }).then((res: any) => res.json()).catch(error => null);
+  }).then().catch(error => null);
 
   if (!content) {
     return res.status(401).json({ message: 'Invalid slug' });
