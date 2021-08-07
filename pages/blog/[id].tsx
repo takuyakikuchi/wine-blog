@@ -12,8 +12,8 @@ export default function BlogId({ blog }: any) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>{blog.title}</h1>
-        <p>{blog.publishedAt}</p>
+        <h1>{blog?.title}</h1>
+        <p>{blog?.publishedAt}</p>
         <div
           dangerouslySetInnerHTML={{
             __html: `${blog.body}`,
