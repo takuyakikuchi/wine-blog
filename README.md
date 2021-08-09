@@ -10,6 +10,8 @@ This is my personal wine blog site
 - Main language: TypeScript
 - CMS: microCMS
 - Hosting: Vercel
+- Others:
+  - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
 - To be added more...
 
 Image can be better to have 👍
