@@ -13,7 +13,6 @@ export default function Home({ blog }: any) {
       <Head>
         <title>My Wine Blog</title>
         <meta name="description" content="My wine blog" />
-        {/* Todo: Upate the favicon later! */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
