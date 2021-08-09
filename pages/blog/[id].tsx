@@ -13,11 +13,11 @@ export default function BlogId({ blog }: any) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>{blog.title || 'タイトルなし'}</h1>
-        {blog.publishedAt && <p>{dayjs(blog.publishedAt).format('YYYY-MM-DD')}</p> }
+        <h1>{blog?.title || 'タイトルなし'}</h1>
+        {blog?.publishedAt && <p>{dayjs(blog.publishedAt).format('YYYY-MM-DD')}</p> }
         <div
           dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
+            __html: `${blog?.body}`,
           }}
         />
       </main>
