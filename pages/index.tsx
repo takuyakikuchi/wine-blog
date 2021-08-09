@@ -43,17 +43,16 @@ export default function Home({ blog }: any) {
         </main>
 
       <footer className={styles.footer}>
-        {/* ? Link to Twitter, Github? */}
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <span>
+          My Wine Blog is created/written by Takuya Kikuchi
+          <a 
+            href="https://twitter.com/_takuyakikuchi"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className={styles.logo}>
+            <Image src="/twitter.svg" alt="Twitter Logo" width={16} height={16} />
+          </a>
+        </span>
       </footer>
     </div>
   );
