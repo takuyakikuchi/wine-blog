@@ -33,7 +33,9 @@
 }
 
 .title a {
-  color: #0070f3;
+  /* TODO: make theme color variable */
+  /* 葡萄色: https://www.colordic.org/colorsample/2038 */
+  color: #522f60;
   text-decoration: none;
 }
 
@@ -82,8 +84,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #522f60;
+  border-color: #522f60;
 }
 
 .card h2 {
