@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { client } from "../libs/client";
 
 import Head from "next/head";
@@ -35,7 +36,7 @@ export default function Home({ blog }: any) {
               <p>原産地呼称: {post.aoc}</p>
               <p>ヴィンテージ: {post.vintage}</p>
               <p>ぶどう品種: {post.grapes}</p>
-              <p>投稿日: {post.publishedAt}</p> 
+              <p>投稿日: {dayjs(post.publishedAt).format('YYYY-MM-DD')}</p> 
             </a>
           </Link>
         ))}

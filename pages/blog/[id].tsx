@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import DefaultErrorPage from 'next/error'
 import { client } from "../../libs/client";
 
@@ -12,11 +13,11 @@ export default function BlogId({ blog }: any) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>{blog?.title}</h1>
-        <p>{blog?.publishedAt}</p>
+        <h1>{blog.title || 'タイトルなし'}</h1>
+        {blog.publishedAt && <p>{dayjs(blog.publishedAt).format('YYYY-MM-DD')}</p> }
         <div
           dangerouslySetInnerHTML={{
-            __html: `${blog?.body}`,
+            __html: `${blog.body}`,
           }}
         />
       </main>
