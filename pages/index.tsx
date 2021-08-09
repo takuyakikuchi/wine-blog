@@ -44,12 +44,12 @@ export default function Home({ blog }: any) {
 
       <footer className={styles.footer}>
         <span>
-          My Wine Blog is created/written by Takuya Kikuchi
+          My Wine Blog is created/written by
           <a 
             href="https://twitter.com/_takuyakikuchi"
             target="_blank"
-            rel="noopener noreferrer" 
-            className={styles.logo}>
+            rel="noopener noreferrer">
+            <span className={styles.twitterAccount}>@_takuyakikuchi</span>
             <Image src="/twitter.svg" alt="Twitter Logo" width={16} height={16} />
           </a>
         </span>
