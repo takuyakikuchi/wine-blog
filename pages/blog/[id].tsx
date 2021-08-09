@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import DefaultErrorPage from 'next/error'
 import Link from "next/link";
+import Head from "next/head";
 import { client } from "../../libs/client";
 
 import styles from "../../styles/Blog.module.css";
@@ -13,6 +14,10 @@ export default function BlogId({ blog }: any) {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{blog?.title || 'タイトルなし'}</title>
+        <meta name="description" content="Blog post" />
+      </Head>
       <main className={styles.main}>
         <h1>{blog?.title || 'タイトルなし'}</h1>
         {blog?.publishedAt && <p>{dayjs(blog.publishedAt).format('YYYY-MM-DD')}</p> }
@@ -22,7 +27,7 @@ export default function BlogId({ blog }: any) {
           }}
         />
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <Link href="/">Back to home</Link>
       </footer>
     </div>
