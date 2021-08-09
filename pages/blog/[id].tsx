@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import DefaultErrorPage from 'next/error'
+import Link from "next/link";
 import { client } from "../../libs/client";
 
 import styles from "../../styles/Blog.module.css";
@@ -21,6 +22,9 @@ export default function BlogId({ blog }: any) {
           }}
         />
       </main>
+      <footer>
+        <Link href="/">Back to home</Link>
+      </footer>
     </div>
   );
 }
