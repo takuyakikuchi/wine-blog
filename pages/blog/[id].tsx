@@ -23,7 +23,7 @@ export default function BlogId({ blog }: any) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@_takuyakikuchi" />
         <meta property="og:title" content="My Wine Blog" />
-        <meta property="og:description" content={`${blog?.title}(${dayjs(blog.publishedAt).format('YYYY-MM-DD')})`} />
+        <meta property="og:description" content={`${blog?.title}(${dayjs(blog?.publishedAt).format('YYYY-MM-DD')})`} />
         <meta property="twitter:image" content={`${ogpUrl}/**${blog?.title}**.png?theme=light&md=1&fontSize=100px&background=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1571656721197-d8f16e3b90d3%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1887%26q%3D80`} />
       </Head>
       <main className={styles.main}>
