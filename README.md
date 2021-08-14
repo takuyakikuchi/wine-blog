@@ -10,6 +10,7 @@ This is my personal wine blog site
 - Main language: TypeScript
 - CMS: microCMS
 - Hosting: Vercel
+- OGP: [vercel/og-image](https://github.com/vercel/og-image)
 - Others:
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
 - To be added more...
