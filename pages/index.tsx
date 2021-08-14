@@ -44,7 +44,7 @@ export default function Home({ blog }: any) {
 
       <footer className={styles.footer}>
         <span>
-          My Wine Blog is created/written by
+          Maintained by
           <a 
             href="https://twitter.com/_takuyakikuchi"
             target="_blank"

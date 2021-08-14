@@ -17,6 +17,10 @@
   width: 80%;
 }
 
+.main img {
+  max-width: 100%;
+}
+
 .footer {
   margin-bottom: 1rem;
 }
