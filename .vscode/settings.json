@@ -1,0 +1,21 @@
+{
+  // Set the default formatter to prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Auto format on save with prettier
+  "editor.formatOnSave": true,
+  // Auto format on save with ESLint and Stylelint
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // Pretteir exceptions: Format css, scss files with Stylelint
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[scss]": {
+    "editor.formatOnSave": false
+  },
+  // Turning off VS Code CSS, SCSS Linting
+  // Avoid batting with Stylelint
+  "css.validate": false,
+  "scss.validate": false
+}
