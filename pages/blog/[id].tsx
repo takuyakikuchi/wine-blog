@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import DefaultErrorPage from 'next/error';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 import { client } from '../../libs/client';
 
 import styles from '../../styles/Blog.module.css';
