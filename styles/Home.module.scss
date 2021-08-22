@@ -1,3 +1,5 @@
+@import './variables';
+
 .container {
   align-items: center;
   display: flex;
@@ -18,54 +20,48 @@
 
 .footer {
   align-items: center;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $boarder-color;
   display: flex;
   height: 100px;
   justify-content: center;
   width: 100%;
-}
 
-.footer span {
-  display: flex;
-}
+  span {
+    display: flex;
+  }
 
-.footer a {
-  align-items: center;
-  color: inherit;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.title a {
-  /* TODO: make theme color variable */
-
-  /* 葡萄色: https://www.colordic.org/colorsample/2038 */
-  color: #522f60;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+  a {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    text-decoration: none;
+  }
 }
 
 .title {
   font-size: 4rem;
   line-height: 1.15;
   margin: 0;
-}
-
-.title,
-.description {
   text-align: center;
+
+  a {
+    color: $main-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
 }
 
 .description {
   font-size: 1.5rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .grid {
@@ -77,7 +73,7 @@
 }
 
 .card {
-  border: 1px solid #eaeaea;
+  border: 1px solid $boarder-color;
   border-radius: 10px;
   color: inherit;
   margin: 1rem;
@@ -86,24 +82,24 @@
   text-decoration: none;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 100%;
-}
 
-.card:hover,
-.card:focus,
-.card:active {
-  border-color: #522f60;
-  color: #522f60;
-}
+  h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
 
-.card h2 {
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-}
+  p {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0;
+  }
 
-.card p {
-  font-size: 1rem;
-  line-height: 1.25;
-  margin: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $main-color;
+    color: $main-color;
+  }
 }
 
 .twitterAccount {
