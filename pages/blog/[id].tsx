@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { client } from '../../libs/client';
 
-import styles from '../../styles/Blog.module.css';
+import styles from '../../styles/Blog.module.scss';
 
 // Todo: update type
 export default function BlogId({ blog }: any) {
