@@ -13,7 +13,7 @@ import { client } from '../libs/client';
 
 import styles from '../styles/Home.module.scss';
 
-interface Post {
+export interface Post {
   aoc?: string;
   blogType: Array<string>;
   body: string;
