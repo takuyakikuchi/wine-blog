@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { client } from '../../libs/client';
+import { microcms } from '../../libs/microcms';
 import { Post } from '../index';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
@@ -10,7 +10,7 @@ const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     return res.status(404).end();
   }
 
-  const content: Post = await client.get({
+  const content: Post = await microcms.get({
     endpoint: 'blog',
     contentId,
     queries: { draftKey },

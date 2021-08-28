@@ -9,7 +9,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { client } from '../libs/client';
+import { microcms } from '../libs/microcms';
 
 import styles from '../styles/Home.module.scss';
 
@@ -77,7 +77,7 @@ export default function Home({ blog }: { blog: Post[] }) {
 }
 
 export const getStaticProps = async () => {
-  const data: { contents: Post[] } = await client.get({ endpoint: 'blog' });
+  const data: { contents: Post[] } = await microcms.get({ endpoint: 'blog' });
 
   return {
     props: {

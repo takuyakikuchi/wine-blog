@@ -3,7 +3,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
-import { client } from '../../libs/client';
+import { microcms } from '../../libs/microcms';
 
 import styles from '../../styles/Blog.module.scss';
 import { Post } from '../index';
@@ -56,7 +56,7 @@ export default function BlogId({ blog }: { blog: Post }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data: Blog = await client.get({ endpoint: 'blog' });
+  const data: Blog = await microcms.get({ endpoint: 'blog' });
 
   const paths = data.contents.map((post: Post) => `/blog/${post.id}`);
   return { paths, fallback: true };
@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const draftKey = isPreview(previewData) ? { draftKey: previewData.draftKey } : {};
 
-  const data = await client.get({ endpoint: 'blog', contentId: id, queries: draftKey });
+  const data = await microcms.get({ endpoint: 'blog', contentId: id, queries: draftKey });
 
   return {
     props: {
