@@ -4,7 +4,6 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import { microcms } from '../../libs/microcms';
-
 import styles from '../../styles/Blog.module.scss';
 import { Post } from '../index';
 
@@ -13,9 +12,6 @@ interface Blog {
 }
 
 export default function BlogId({ blog }: { blog: Post }) {
-  // TODO: put this in env file later
-  const ogpUrl = 'https://og-image-five-woad.vercel.app';
-
   if (!blog) {
     <DefaultErrorPage statusCode={404} />;
   }
@@ -36,7 +32,7 @@ export default function BlogId({ blog }: { blog: Post }) {
         />
         <meta
           property='twitter:image'
-          content={`${ogpUrl}/**${title}**.png?theme=light&md=1&fontSize=100px&background=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1571656721197-d8f16e3b90d3%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1887%26q%3D80`}
+          content={`${process.env.OGP_URL}/**${title}**.png?${process.env.OGP_PARAMS}`}
         />
       </Head>
       <main className={styles.main}>
@@ -57,7 +53,6 @@ export default function BlogId({ blog }: { blog: Post }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: Blog = await microcms.get({ endpoint: 'blog' });
-
   const paths = data.contents.map((post: Post) => `/blog/${post.id}`);
   return { paths, fallback: true };
 };
@@ -77,7 +72,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const draftKey = isPreview(previewData) ? { draftKey: previewData.draftKey } : {};
 
   const data = await microcms.get({ endpoint: 'blog', contentId: id, queries: draftKey });
-
   return {
     props: {
       blog: data,

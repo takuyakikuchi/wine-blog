@@ -1,16 +1,12 @@
 import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
-
 dayjs.extend(utc);
 dayjs.extend(timezone);
-
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { microcms } from '../libs/microcms';
-
 import styles from '../styles/Home.module.scss';
 
 export interface Post {
