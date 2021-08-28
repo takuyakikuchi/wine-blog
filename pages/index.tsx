@@ -3,6 +3,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -72,7 +73,7 @@ export default function Home({ blog }: { blog: Post[] }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const data: { contents: Post[] } = await microcms.get({ endpoint: 'blog' });
 
   return {
