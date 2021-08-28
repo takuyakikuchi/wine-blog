@@ -13,7 +13,7 @@ interface Blog {
 
 export default function BlogId({ blog }: { blog: Post }) {
   if (!blog) {
-    <DefaultErrorPage statusCode={404} />;
+    return <DefaultErrorPage statusCode={404} />;
   }
 
   const { title, body, publishedAt } = blog;
