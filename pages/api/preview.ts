@@ -1,19 +1,20 @@
-import { client } from '../../libs/client';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { microcms } from '../../libs/microcms';
+import { Post } from '../index';
 
-// Todo: update type
-const preview = async (req: any, res: any) => {
-  if (!req.query.slug) {
+const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+  const contentId = req?.query?.slug ? `${req.query.slug}` : '';
+  const draftKey = req?.query?.draftKey ? `${req.query.draftKey}` : '';
+
+  if (!draftKey) {
     return res.status(404).end();
   }
 
-  const content: any = await client
-    .get({
-      endpoint: 'blog',
-      contentId: req.query.slug,
-      queries: { draftKey: req.query.draftKey },
-    })
-    .then()
-    .catch((error) => null);
+  const content: Post = await microcms.get({
+    endpoint: 'blog',
+    contentId,
+    queries: { draftKey },
+  });
 
   if (!content) {
     return res.status(401).json({ message: 'Invalid slug' });
