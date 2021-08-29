@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import Link from 'next/link';
-import { Pagination, PER_PAGE } from '@/components/Pagination';
+import { PER_PAGE } from '@/components/Pagination';
 import { microcms } from '@/libs/microcms';
+import Home from '@/pages/index';
 import { Blog, Post } from '@/types/blog';
 
 type Props = {
@@ -10,20 +10,7 @@ type Props = {
 };
 
 export default function BlogPageId({ blog, totalCount }: Props) {
-  return (
-    <div>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <Pagination totalCount={totalCount} />
-    </div>
-  );
+  return <Home blog={blog} totalCount={totalCount} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
