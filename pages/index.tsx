@@ -7,27 +7,17 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Pagination } from '../components/Pagination';
 import { microcms } from '../libs/microcms';
 import styles from '../styles/Home.module.scss';
+import { Blog, Post } from '../types/blog';
 
-export interface Post {
-  aoc?: string;
-  blogType: Array<string>;
-  body: string;
-  country?: Array<string>;
-  createdAt: Date;
-  grapes?: Array<string>;
-  id: string;
-  producer?: string;
-  publishedAt: Date;
-  revisedAt: Date;
-  title: string;
-  updatedAt: Date;
-  vintage?: number;
-  wineType?: Array<string>;
-}
+type Props = {
+  blog: Post[];
+  totalCount: number;
+};
 
-export default function Home({ blog }: { blog: Post[] }) {
+export default function Home({ blog, totalCount }: Props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -58,6 +48,8 @@ export default function Home({ blog }: { blog: Post[] }) {
             </Link>
           ))}
         </div>
+
+        <Pagination totalCount={totalCount} />
       </main>
 
       <footer className={styles.footer}>
@@ -74,11 +66,12 @@ export default function Home({ blog }: { blog: Post[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data: { contents: Post[] } = await microcms.get({ endpoint: 'blog' });
+  const data: Blog = await microcms.get({ endpoint: 'blog' });
 
   return {
     props: {
       blog: data.contents,
+      totalCount: data.totalCount,
     },
   };
 };

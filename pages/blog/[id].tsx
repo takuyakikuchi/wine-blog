@@ -5,18 +5,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { microcms } from '../../libs/microcms';
 import styles from '../../styles/Blog.module.scss';
-import { Post } from '../index';
+import { Post, Blog } from '../../types/blog';
 
-interface Blog {
-  contents: Post[];
-}
-
-export default function BlogId({ blog }: { blog: Post }) {
-  if (!blog) {
+export default function BlogId({ post }: { post: Post }) {
+  if (!post) {
     return <DefaultErrorPage statusCode={404} />;
   }
 
-  const { title, body, publishedAt } = blog;
+  const { title, body, publishedAt } = post;
 
   return (
     <div className={styles.container}>
@@ -74,7 +70,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await microcms.get({ endpoint: 'blog', contentId: id, queries: draftKey });
   return {
     props: {
-      blog: data,
+      post: data,
       ...draftKey,
     },
   };
