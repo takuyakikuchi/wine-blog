@@ -7,10 +7,10 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Pagination } from '../components/Pagination';
-import { microcms } from '../libs/microcms';
-import styles from '../styles/Home.module.scss';
-import { Blog, Post } from '../types/blog';
+import { Pagination } from '@/components/Pagination';
+import { microcms } from '@/libs/microcms';
+import styles from '@/styles/Home.module.scss';
+import { Blog, Post } from '@/types/blog';
 
 type Props = {
   blog: Post[];

@@ -3,9 +3,9 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
-import { microcms } from '../../libs/microcms';
-import styles from '../../styles/Blog.module.scss';
-import { Post, Blog } from '../../types/blog';
+import { microcms } from '@/libs/microcms';
+import styles from '@/styles/Blog.module.scss';
+import { Post, Blog } from '@/types/blog';
 
 export default function BlogId({ post }: { post: Post }) {
   if (!post) {

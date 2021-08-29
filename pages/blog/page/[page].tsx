@@ -1,8 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
-import { Pagination, PER_PAGE } from '../../../components/Pagination';
-import { microcms } from '../../../libs/microcms';
-import { Blog, Post } from '../../../types/blog';
+import { Pagination, PER_PAGE } from '@/components/Pagination';
+import { microcms } from '@/libs/microcms';
+import { Blog, Post } from '@/types/blog';
 
 type Props = {
   blog: Post[];
