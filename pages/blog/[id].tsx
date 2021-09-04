@@ -32,7 +32,7 @@ export default function BlogId({ blog }: { blog: Post }) {
         />
         <meta
           property='twitter:image'
-          content={`${process.env.OGP_URL}/**${title}**.png?${process.env.OGP_PARAMS}`}
+          content={`https://og-image-five-woad.vercel.app/**${title}**.png?theme=light&md=1&fontSize=100px&background=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1571656721197-d8f16e3b90d3%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1887%26q%3D80`}
         />
       </Head>
       <main className={styles.main}>
