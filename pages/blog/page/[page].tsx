@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pages = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
 
-  const totalPages = Math.ceil(data.totalCount / PER_PAGE);
+  const totalPages = Math.ceil(data.totalCount / PER_PAGE) || 1;
 
   const paths = pages(1, totalPages).map((page) => `/blog/page/${page}`);
 
@@ -28,7 +28,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
-  console.log(params);
 
   const page = params?.page ? Number(params.page) : 1;
 

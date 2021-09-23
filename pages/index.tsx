@@ -31,9 +31,7 @@ export default function Home({ blog, totalCount }: Props) {
         <Header />
 
         <div className={styles.grid}>
-          {blog.map((post: Post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          {blog && blog.map((post: Post) => <PostCard key={post.id} post={post} />)}
         </div>
 
         <Pagination totalCount={totalCount} />
