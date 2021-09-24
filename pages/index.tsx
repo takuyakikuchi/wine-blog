@@ -15,10 +15,11 @@ import { Blog, Post } from '@/types/blog';
 
 type Props = {
   blog: Post[];
+  currentPage?: number;
   totalCount: number;
 };
 
-export default function Home({ blog, totalCount }: Props) {
+export default function Home({ blog, currentPage = 1, totalCount }: Props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -34,7 +35,7 @@ export default function Home({ blog, totalCount }: Props) {
           {blog && blog.map((post: Post) => <PostCard key={post.id} post={post} />)}
         </div>
 
-        <Pagination totalCount={totalCount} />
+        <Pagination currentPage={currentPage} totalCount={totalCount} />
       </main>
 
       <Footer />

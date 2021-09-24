@@ -1,22 +1,33 @@
 import Link from 'next/link';
+import RcPagination, { PaginationProps } from 'rc-pagination';
 
 export const PER_PAGE = 10;
 
-export const Pagination = ({ totalCount }: { totalCount: number }) => {
-  const pages = (start: number, end: number) =>
-    [...Array(end - start + 1)].map((_, i) => start + i);
+type Props = {
+  currentPage: number;
+  totalCount: number;
+};
 
-  const totalPages = Math.ceil(totalCount / PER_PAGE) || 1;
-
-  return (
-    <ul>
-      {pages(1, totalPages).map((page) => (
-        <li key={page}>
+export const Pagination = ({ currentPage, totalCount }: Props) => {
+  const itemRender: PaginationProps['itemRender'] = (page, type, element) => {
+    switch (type) {
+      case 'page': {
+        return (
           <Link href={`/blog/page/${page}`}>
             <a>{page}</a>
           </Link>
-        </li>
-      ))}
-    </ul>
-  );
+        );
+      }
+      case 'prev': {
+        return <Link href={`/blog/page/${page}`}>{element}</Link>;
+      }
+      case 'next': {
+        return <Link href={`/blog/page/${page}`}>{element}</Link>;
+      }
+      default:
+        return element;
+    }
+  };
+
+  return <RcPagination itemRender={itemRender} total={totalCount} />;
 };

@@ -1,8 +1,16 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
+import { useRouter } from 'next/router';
 import { PER_PAGE } from '@/components/Pagination';
 import { microcms } from '@/libs/microcms';
 import Home from '@/pages/index';
 import { Blog, Post } from '@/types/blog';
+
+const parsePageParams = (page: string | string[] | undefined) => {
+  if (typeof page === 'string') {
+    return parseInt(page, 10);
+  }
+  return 1;
+};
 
 type Props = {
   blog: Post[];
@@ -10,7 +18,9 @@ type Props = {
 };
 
 export default function BlogPageId({ blog, totalCount }: Props) {
-  return <Home blog={blog} totalCount={totalCount} />;
+  const router = useRouter();
+  const { page } = router.query;
+  return <Home blog={blog} totalCount={totalCount} currentPage={parsePageParams(page)} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
