@@ -1,0 +1,43 @@
+@import './variables';
+
+.container {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  border: 1px solid $boarder-color;
+  border-radius: 10px;
+  line-height: 2rem;
+  margin: 0.5rem;
+  text-align: center;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  vertical-align: middle;
+  width: 2rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $main-color;
+    color: $main-color;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.disabled {
+  color: #eaeaea;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.active {
+  border-color: $main-color;
+  color: $main-color;
+}
