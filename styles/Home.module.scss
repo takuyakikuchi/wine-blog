@@ -16,11 +16,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 5rem 0;
+  width: 100%;
 }
 
 .footer {
   align-items: center;
-  border-top: 1px solid $boarder-color;
+  border-top: 1px solid $light-gray;
   display: flex;
   height: 100px;
   justify-content: center;
@@ -47,7 +48,7 @@
   text-align: center;
 
   a {
-    color: $main-color;
+    color: $primary-purple;
     text-decoration: none;
 
     &:hover,
@@ -73,7 +74,7 @@
 }
 
 .card {
-  border: 1px solid $boarder-color;
+  border: 1px solid $light-gray;
   border-radius: 10px;
   color: inherit;
   margin: 1rem;
@@ -97,8 +98,8 @@
   &:hover,
   &:focus,
   &:active {
-    border-color: $main-color;
-    color: $main-color;
+    border-color: $primary-purple;
+    color: $primary-purple;
   }
 }
 
