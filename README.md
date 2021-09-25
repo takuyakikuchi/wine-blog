@@ -18,6 +18,7 @@ https://wine-blog.vercel.app
 - OGP: [vercel/og-image](https://github.com/vercel/og-image)
 - Others:
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
+  - Pagination: [rc-pagination](https://github.com/react-component/pagination)
 
 ## Dev Roadmap
 
