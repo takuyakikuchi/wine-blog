@@ -7,6 +7,10 @@ import { microcms } from '@/libs/microcms';
 import styles from '@/styles/Blog.module.scss';
 import { Post, Blog } from '@/types/blog';
 
+const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
+const OGP_IMAGE_URL =
+  'https%3A%2F%2Fpbs.twimg.com%2Fcard_img%2F1440645740271845376%2F-sERHwJK%3Fformat%3Djpg%26name%3Dsmall';
+
 export default function BlogId({ post }: { post: Post }) {
   if (!post) {
     return <DefaultErrorPage statusCode={404} />;
@@ -28,7 +32,7 @@ export default function BlogId({ post }: { post: Post }) {
         />
         <meta
           property='twitter:image'
-          content={`https://og-image-five-woad.vercel.app/**${title}**.png?theme=light&md=1&fontSize=100px&background=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1571656721197-d8f16e3b90d3%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1887%26q%3D80`}
+          content={`${OGP_URL}/**${title}**.png?theme=light&md=1&fontSize=100px&background=${OGP_IMAGE_URL}`}
         />
       </Head>
       <main className={styles.main}>
