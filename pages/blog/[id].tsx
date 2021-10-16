@@ -9,7 +9,7 @@ import { Post, Blog } from '@/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
 const OGP_IMAGE_URL =
-  'https%3A%2F%2Fpbs.twimg.com%2Fcard_img%2F1440645740271845376%2F-sERHwJK%3Fformat%3Djpg%26name%3Dsmall';
+  'https://images.unsplash.com/photo-1548025396-689d647d00c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1734&q=80';
 
 export default function BlogId({ post }: { post: Post }) {
   if (!post) {
@@ -32,7 +32,7 @@ export default function BlogId({ post }: { post: Post }) {
         />
         <meta
           property='twitter:image'
-          content={`${OGP_URL}/**${title}**.png?theme=light&md=1&fontSize=100px&background=${OGP_IMAGE_URL}`}
+          content={`${OGP_URL}/**${title}**.png?theme=dark&md=1&fontSize=100px&background=${OGP_IMAGE_URL}`}
         />
       </Head>
       <main className={styles.main}>
