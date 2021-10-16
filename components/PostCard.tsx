@@ -14,7 +14,7 @@ export default function PostCard({ post }: { post: Post }) {
       <p>生産国: {post.country}</p>
       <p>原産地呼称: {post.aoc}</p>
       <p>ヴィンテージ: {post.vintage}</p>
-      <p>ぶどう品種: {post.grapes}</p>
+      <p>ぶどう品種: {post.grapes ? post.grapes.join(', ') : ''}</p>
     </>
   );
 
