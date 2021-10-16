@@ -1,9 +1,10 @@
 ## About
 
-This is my wine blog:
-https://wine-blog.vercel.app
+This is a blog about wines I enjoy in daily life.
 
-## Technology stack
+[My Wine Blog](https://wine-blog.vercel.app/)
+
+## Tech stack
 
 - Next.js + TypeScript
 - Linter
@@ -19,7 +20,8 @@ https://wine-blog.vercel.app
 - Others:
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
   - Pagination: [rc-pagination](https://github.com/react-component/pagination)
+  - Font: [M PLUS 1p](https://fonts.google.com/specimen/M+PLUS+1p?subset=japanese#about)
 
-## Dev Roadmap
+## Dev Road-map
 
 https://github.com/users/takuyakikuchi/projects/1
