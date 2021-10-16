@@ -77,7 +77,7 @@
   border: 1px solid $light-gray;
   border-radius: 10px;
   color: inherit;
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 1.5rem;
   text-align: left;
   text-decoration: none;
@@ -110,6 +110,20 @@
 @media (max-width: 600px) {
   .grid {
     flex-direction: column;
-    width: 100%;
+    width: 95%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .card {
+    h2 {
+      font-size: 1rem;
+    }
   }
 }
