@@ -30,7 +30,7 @@
 }
 
 .disabled {
-  color: #eaeaea;
+  color: $light-gray;
 
   &:hover {
     cursor: not-allowed;
