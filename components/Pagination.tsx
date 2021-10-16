@@ -44,7 +44,7 @@ export const Pagination = ({ currentPage, totalCount }: Props) => {
           ${isPageDisabled(page, currentPage) ? ` ${styles.disabled}` : ''}
           ${isCurrentPage(page, type, currentPage) ? ` ${styles.active}` : ''}`}
       >
-        {getElement(page, type)}
+        <span>{getElement(page, type)}</span>
       </div>
     );
   };
