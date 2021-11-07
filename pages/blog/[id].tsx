@@ -36,9 +36,12 @@ export default function BlogId({ post }: { post: Post }) {
         />
       </Head>
 
-      <main className={styles.main}>
+      <header className={styles.header}>
         <h1>{title || 'タイトルなし'}</h1>
         {publishedAt && <p>{dayjs(publishedAt).format('YYYY-MM-DD')}</p>}
+      </header>
+
+      <main className={styles.main}>
         <div
           dangerouslySetInnerHTML={{
             __html: `${body}`,
@@ -46,7 +49,7 @@ export default function BlogId({ post }: { post: Post }) {
         />
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <Link href='/'>Back to home</Link>
       </footer>
     </div>
