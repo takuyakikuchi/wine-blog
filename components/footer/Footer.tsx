@@ -4,13 +4,13 @@ import styles from './Footer.module.scss';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <span>
-        Maintained by
+      <div className={styles.twitterAccount}>
+        <span>Maintained by</span>
         <a href='https://twitter.com/_takuyakikuchi' target='_blank' rel='noopener noreferrer'>
-          <span className={styles.twitterAccount}>@_takuyakikuchi</span>
+          <span>@_takuyakikuchi</span>
           <Image src='/twitter.svg' alt='Twitter Logo' width={16} height={16} />
         </a>
-      </span>
+      </div>
     </footer>
   );
 }
