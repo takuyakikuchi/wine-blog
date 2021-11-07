@@ -14,10 +14,11 @@ This is a blog about wines I enjoy in daily life.
 - Formatter
   - [Prettier](https://prettier.io/)
   - [stylelint](https://stylelint.io/)
+    - [stormwarning/stylelint-config-recess-order: 🗂️ Recess-based property sort order for Stylelint.](https://github.com/stormwarning/stylelint-config-recess-order)
 - CMS: [microCMS](https://microcms.io/)
 - Hosting: [Vercel](https://vercel.com/)
 - OGP: [vercel/og-image](https://github.com/vercel/og-image)
-- Others:
+- Others:\*\*\*\*
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
   - Pagination: [rc-pagination](https://github.com/react-component/pagination)
   - Font: [M PLUS 1p](https://fonts.google.com/specimen/M+PLUS+1p?subset=japanese#about)

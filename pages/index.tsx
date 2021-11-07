@@ -5,12 +5,12 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import { Pagination } from '@/components/Pagination';
-import PostCard from '@/components/PostCard';
+import styles from './Index.module.scss';
+import Card from '@/components/card/Card';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
+import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
-import styles from '@/styles/Home.module.scss';
 import { Blog, Post } from '@/types/blog';
 
 type Props = {
@@ -32,7 +32,7 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
         <Header />
 
         <div className={styles.grid}>
-          {blog && blog.map((post: Post) => <PostCard key={post.id} post={post} />)}
+          {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
         </div>
 
         <Pagination currentPage={currentPage} totalCount={totalCount} />
