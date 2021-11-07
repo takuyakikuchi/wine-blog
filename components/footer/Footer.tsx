@@ -7,7 +7,7 @@ export default function Footer() {
       <span>
         Maintained by
         <a href='https://twitter.com/_takuyakikuchi' target='_blank' rel='noopener noreferrer'>
-          <span className={styles.twitterAccount}>@_takuyakikuchi</span>
+          <span className={styles.twitter}>@_takuyakikuchi</span>
           <Image src='/twitter.svg' alt='Twitter Logo' width={16} height={16} />
         </a>
       </span>
