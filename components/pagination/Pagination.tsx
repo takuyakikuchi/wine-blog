@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import RcPagination, { PaginationProps } from 'rc-pagination';
-import styles from '@/styles/Pagination.module.scss';
+import styles from './Pagination.module.scss';
 
 export const PER_PAGE = 10;
 

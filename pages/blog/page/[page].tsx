@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-import { PER_PAGE } from '@/components/Pagination';
+import { PER_PAGE } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import Home from '@/pages/index';
 import { Blog, Post } from '@/types/blog';

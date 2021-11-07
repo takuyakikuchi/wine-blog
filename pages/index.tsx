@@ -8,7 +8,7 @@ import Head from 'next/head';
 import Card from '@/components/Card';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { Pagination } from '@/components/Pagination';
+import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import styles from '@/styles/Home.module.scss';
 import { Blog, Post } from '@/types/blog';

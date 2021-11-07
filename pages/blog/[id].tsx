@@ -1,12 +1,10 @@
 import dayjs from 'dayjs';
-
 import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
-
+import styles from './Blog.module.scss';
 import { microcms } from '@/libs/microcms';
-import styles from '@/pages/blog/Blog.module.scss';
 import { Post, Blog } from '@/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
