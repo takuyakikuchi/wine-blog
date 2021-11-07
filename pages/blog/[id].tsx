@@ -1,10 +1,12 @@
 import dayjs from 'dayjs';
+
 import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
+
 import { microcms } from '@/libs/microcms';
-import styles from '@/styles/Blog.module.scss';
+import styles from '@/pages/blog/Blog.module.scss';
 import { Post, Blog } from '@/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
@@ -35,6 +37,7 @@ export default function BlogId({ post }: { post: Post }) {
           content={`${OGP_URL}/**${title}**.png?theme=dark&md=1&fontSize=100px&background=${OGP_IMAGE_URL}`}
         />
       </Head>
+
       <main className={styles.main}>
         <h1>{title || 'タイトルなし'}</h1>
         {publishedAt && <p>{dayjs(publishedAt).format('YYYY-MM-DD')}</p>}
@@ -44,6 +47,7 @@ export default function BlogId({ post }: { post: Post }) {
           }}
         />
       </main>
+
       <footer className={styles.footer}>
         <Link href='/'>Back to home</Link>
       </footer>
