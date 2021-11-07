@@ -17,5 +17,7 @@
   // Turning off VS Code CSS, SCSS Linting
   // Avoid batting with Stylelint
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  // Turn on Stylelint
+  "stylelint.validate": ["css", "scss"]
 }
