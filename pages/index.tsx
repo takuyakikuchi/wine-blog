@@ -33,7 +33,7 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.grid}>
+        <div className={styles.cardContainer}>
           {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
         </div>
 
