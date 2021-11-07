@@ -1,0 +1,39 @@
+@import '@/styles/variables';
+
+.card {
+  width: 100%;
+  padding: 24px;
+  margin: 16px 0;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  border: 1px solid $light-gray;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary-purple;
+    border-color: $primary-purple;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    h2 {
+      font-size: 1rem;
+    }
+  }
+}
