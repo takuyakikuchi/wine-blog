@@ -5,12 +5,12 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import styles from './Index.module.scss';
 import Card from '@/components/card/Card';
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
-import styles from '@/styles/Home.module.scss';
 import { Blog, Post } from '@/types/blog';
 
 type Props = {
