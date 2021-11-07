@@ -8,7 +8,6 @@ import Head from 'next/head';
 import styles from './Index.module.scss';
 import Card from '@/components/card/Card';
 import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
 import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
@@ -28,9 +27,12 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>
-        <Header />
+      <header className={styles.header}>
+        <h1>My Wine Blog</h1>
+        <p>I write a blog to record tasting comments and some learnings about wine!</p>
+      </header>
 
+      <main className={styles.main}>
         <div className={styles.grid}>
           {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
         </div>
