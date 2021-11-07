@@ -18,8 +18,7 @@
         ]
       }
     ],
-    "string-quotes": "single",
-    "order/properties-alphabetical-order": true
+    "string-quotes": "single"
   },
   "ignoreFiles": [
     "**/node_modules/**"
