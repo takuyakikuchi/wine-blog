@@ -7,7 +7,7 @@ import Link from 'next/link';
 import styles from '@/styles/Home.module.scss';
 import { Post } from '@/types/blog';
 
-export default function PostCard({ post }: { post: Post }) {
+export default function Card({ post }: { post: Post }) {
   const tastingContents = (
     <>
       <p>生産者: {post.producer}</p>
