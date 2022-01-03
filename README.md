@@ -29,6 +29,4 @@ This is a blog about wines I enjoy in daily life.
 
 ## Dev Road-map
 
-(Current)https://github.com/users/takuyakikuchi/projects/2/views/6
-
-(Archieved)https://github.com/users/takuyakikuchi/projects/1
+https://github.com/users/takuyakikuchi/projects/2/views/6
