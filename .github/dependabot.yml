@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Enables npm version update
+  - package-ecosystem: 'npm'
+    # Look for "package.json" and "lock" files in "root" directory
+    directory: '/'
+    # Check npm registry update weekly
+    schedule:
+      interval: 'weekly'
