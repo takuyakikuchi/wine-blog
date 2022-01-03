@@ -18,7 +18,11 @@ This is a blog about wines I enjoy in daily life.
 - CMS: [microCMS](https://microcms.io/)
 - Hosting: [Vercel](https://vercel.com/)
 - OGP: [vercel/og-image](https://github.com/vercel/og-image)
-- Others:\*\*\*\*
+- Dependabot:
+  - [Alert](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-alerts-for-vulnerable-dependencies)  
+  - [Security update](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-alerts-for-vulnerable-dependencies)
+  - [Version updates](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates)
+- Others:
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
   - Pagination: [rc-pagination](https://github.com/react-component/pagination)
   - Font: [M PLUS 1p](https://fonts.google.com/specimen/M+PLUS+1p?subset=japanese#about)
