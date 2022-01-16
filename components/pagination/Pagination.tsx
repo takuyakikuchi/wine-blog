@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import RcPagination, { PaginationProps } from 'rc-pagination';
+import RcPagination from 'rc-pagination';
 import styles from './Pagination.module.scss';
 
 export const PER_PAGE = 10;
@@ -36,7 +36,7 @@ export const Pagination = ({ currentPage, totalCount }: Props) => {
     router.push(`/blog/page/${page}`);
   };
 
-  const itemRender: PaginationProps['itemRender'] = (page, type) => {
+  const itemRender: any = (page: any, type: any) => {
     return (
       <div
         onClick={isPageDisabled(page, currentPage) ? () => {} : () => handlePageChange(page)}
