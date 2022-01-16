@@ -36,7 +36,7 @@ export const Pagination = ({ currentPage, totalCount }: Props) => {
     router.push(`/blog/page/${page}`);
   };
 
-  const itemRender: any = (page: any, type: any) => {
+  const itemRender = (page: number, type: string) => {
     return (
       <div
         onClick={isPageDisabled(page, currentPage) ? () => {} : () => handlePageChange(page)}
