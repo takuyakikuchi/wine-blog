@@ -5,12 +5,24 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import styled from 'styled-components';
 import styles from './Index.module.scss';
 import Card from '@/components/card/Card';
 import Footer from '@/components/footer/Footer';
 import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
+
+export const Header = styled.header`
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+`;
 
 type Props = {
   blog: Post[];
@@ -27,10 +39,10 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <header className={styles.header}>
+      <Header>
         <h1>My Wine Blog</h1>
         <p>I write a blog to record tasting comments and some learnings about wine!</p>
-      </header>
+      </Header>
 
       <main className={styles.main}>
         <div className={styles['card-container']}>
