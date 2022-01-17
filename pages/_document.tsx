@@ -1,3 +1,5 @@
+// https://styled-components.com/docs/advanced#nextjs
+// https://github.com/vercel/next.js/blob/main/examples/with-styled-components/pages/_document.js
 import Document, { DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
