@@ -1,8 +1,3 @@
-import dayjs from 'dayjs';
-dayjs.extend(utc);
-dayjs.extend(timezone);
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
@@ -12,7 +7,51 @@ import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
 
-export const Wrapper = styled.div`
+type Props = {
+  blog: Post[];
+  currentPage?: number;
+  totalCount: number;
+};
+
+export default function Home({ blog, currentPage = 1, totalCount }: Props) {
+  return (
+    <PageWrapper>
+      <Head>
+        <title>My Wine Blog</title>
+        <meta name='description' content='My wine blog' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+
+      <Header>
+        <h1>My Wine Blog</h1>
+        <p>I write a blog to record tasting comments and some learnings about wine!</p>
+      </Header>
+
+      <Main>
+        <ListWrapper>
+          {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
+        </ListWrapper>
+
+        <Pagination currentPage={currentPage} totalCount={totalCount} />
+      </Main>
+
+      <Footer />
+    </PageWrapper>
+  );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data: Blog = await microcms.get({ endpoint: 'blog' });
+
+  return {
+    props: {
+      blog: data.contents,
+      totalCount: data.totalCount,
+    },
+  };
+};
+
+export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,47 +102,3 @@ export const ListWrapper = styled.div`
     width: 95%;
   }
 `;
-
-type Props = {
-  blog: Post[];
-  currentPage?: number;
-  totalCount: number;
-};
-
-export default function Home({ blog, currentPage = 1, totalCount }: Props) {
-  return (
-    <Wrapper>
-      <Head>
-        <title>My Wine Blog</title>
-        <meta name='description' content='My wine blog' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <Header>
-        <h1>My Wine Blog</h1>
-        <p>I write a blog to record tasting comments and some learnings about wine!</p>
-      </Header>
-
-      <Main>
-        <ListWrapper>
-          {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
-        </ListWrapper>
-
-        <Pagination currentPage={currentPage} totalCount={totalCount} />
-      </Main>
-
-      <Footer />
-    </Wrapper>
-  );
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const data: Blog = await microcms.get({ endpoint: 'blog' });
-
-  return {
-    props: {
-      blog: data.contents,
-      totalCount: data.totalCount,
-    },
-  };
-};
