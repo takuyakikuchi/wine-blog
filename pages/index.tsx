@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Footer from '@/components/footer/Footer';
 import Card from '@/components/home/Card';
+import Footer from '@/components/home/Footer';
 import { Pagination } from '@/components/pagination/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
