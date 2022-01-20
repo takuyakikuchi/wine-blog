@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import Card from '@/components/home/Card';
 import Footer from '@/components/home/Footer';
-import { Pagination } from '@/components/pagination/Pagination';
+import { Pagination } from '@/components/home/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
 
