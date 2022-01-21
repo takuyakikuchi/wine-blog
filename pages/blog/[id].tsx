@@ -3,7 +3,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './Blog.module.scss';
+import styled from 'styled-components';
 import { microcms } from '@/libs/microcms';
 import { Post, Blog } from '@/types/blog';
 
@@ -19,7 +19,7 @@ export default function BlogId({ post }: { post: Post }) {
   const { title, body, publishedAt } = post;
 
   return (
-    <div className={styles.container}>
+    <Wrapper>
       <Head>
         <title>{title || 'タイトルなし'}</title>
         <meta name='description' content='Blog post' />
@@ -36,23 +36,23 @@ export default function BlogId({ post }: { post: Post }) {
         />
       </Head>
 
-      <header className={styles.header}>
+      <Header>
         <h1>{title || 'タイトルなし'}</h1>
         {publishedAt && <p>{dayjs(publishedAt).format('YYYY-MM-DD')}</p>}
-      </header>
+      </Header>
 
-      <main className={styles.main}>
+      <Main>
         <div
           dangerouslySetInnerHTML={{
             __html: `${body}`,
           }}
         />
-      </main>
+      </Main>
 
       <footer>
         <Link href='/'>Back to home</Link>
       </footer>
-    </div>
+    </Wrapper>
   );
 }
 
@@ -84,3 +84,36 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  padding: 32px 8px;
+`;
+
+export const Header = styled.header`
+  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+export const Main = styled.main`
+  display: flex;
+  flex-grow: 1;
+  width: 80%;
+  padding: 16px 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 90%;
+  }
+`;

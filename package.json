@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "lint:style": "stylelint '**/*.{css,scss,sass}'",
-    "lint:style:fix": "stylelint --fix '**/*.{css,scss,sass}'",
+    "lint:css": "stylelint './{components,pages}/**/*.{js,jsx,ts,tsx}'",
+    "lint:css:fix": "stylelint --fix './{components,pages}/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -19,30 +19,29 @@
     "rc-pagination": "^3.1.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "^1.38.0"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@types/react": "17.0.38",
+    "@types/styled-components": "^5.1.20",
+    "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "prettier": "^2.3.2",
-    "stylelint": "^14.0.1",
-    "stylelint-config-recess-order": "^3.0.0",
-    "stylelint-config-standard": "^24.0.0",
-    "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-order": "^5.0.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "4.5.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,less,sass,scss}": [
-      "stylelint --fix"
+      "prettier --write",
+      "stylelint"
     ]
   }
 }

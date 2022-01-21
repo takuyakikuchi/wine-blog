@@ -20,8 +20,10 @@
       "@/libs/*": ["libs/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
-      "@/types/*": ["types/*"]
-    }
+      "@/types/*": ["types/*"],
+      "@/utils/*": ["utils/*"]
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

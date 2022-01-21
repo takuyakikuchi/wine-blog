@@ -1,28 +1,9 @@
 {
-  "plugins": [
-    "stylelint-order"
+  "processors": [
+    "stylelint-processor-styled-components"
   ],
   "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-recess-order"
-  ],
-  "rules": {
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "tailwind",
-          "apply",
-          "variants",
-          "responsive",
-          "screen"
-        ]
-      }
-    ],
-    "selector-id-pattern": null,
-    "string-quotes": "single"
-  },
-  "ignoreFiles": [
-    "**/node_modules/**"
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
   ]
 }
