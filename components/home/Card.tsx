@@ -5,7 +5,7 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Post } from '@/types/blog';
+import { Post } from '@/utils/types/blog';
 
 export default function Card({ post }: { post: Post }) {
   const tastingContents = (

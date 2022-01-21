@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { microcms } from '@/libs/microcms';
-import { Post, Blog } from '@/types/blog';
+import { Post, Blog } from '@/utils/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
 const OGP_IMAGE_URL =

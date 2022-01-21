@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { microcms } from '@/libs/microcms';
-import { Post } from '@/types/blog';
+import { Post } from '@/utils/types/blog';
 
 const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const contentId = req?.query?.slug ? `${req.query.slug}` : '';
