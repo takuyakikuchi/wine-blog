@@ -45,6 +45,9 @@ const theme = {
     primary: 'hsl(283deg 34% 28%)',
     lightGray: 'hsl(0deg 0% 92%)',
   },
+  media: {
+    tablet: '600px',
+  },
 };
 
 function MyApp({ Component, pageProps }: AppProps) {

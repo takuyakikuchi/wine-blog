@@ -71,7 +71,7 @@ export const Header = styled.header`
     font-size: 1.5rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     h1 {
       font-size: 2rem;
     }
@@ -98,7 +98,7 @@ export const ListWrapper = styled.div`
   gap: 16px;
   width: 80%;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 95%;
   }
 `;

@@ -96,7 +96,7 @@ export const Wrapper = styled.div`
 export const Header = styled.header`
   text-align: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     h1 {
       font-size: 1.5rem;
     }
@@ -113,7 +113,7 @@ export const Main = styled.main`
     max-width: 100%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 90%;
   }
 `;

@@ -50,7 +50,7 @@ export const CardAnchor = styled.a`
     border-color: ${({ theme }) => theme.colors.primary};
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     h2 {
       font-size: 1rem;
     }
