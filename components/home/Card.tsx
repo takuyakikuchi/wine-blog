@@ -1,11 +1,7 @@
-import dayjs from 'dayjs';
-dayjs.extend(utc);
-dayjs.extend(timezone);
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Post } from '@/types/blog';
+import { toJapanDate } from '@/utils/helper/dayjs';
+import { Post } from '@/utils/types/blog';
 
 export default function Card({ post }: { post: Post }) {
   const tastingContents = (
@@ -24,7 +20,7 @@ export default function Card({ post }: { post: Post }) {
       <CardAnchor>
         <h2>{post.title}</h2>
         {post.blogType.includes('テイスティング') && tastingContents}
-        <p>投稿日: {dayjs.utc(post.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</p>
+        <p>投稿日: {toJapanDate(post.publishedAt)}</p>
       </CardAnchor>
     </Link>
   );

@@ -5,7 +5,7 @@ import Card from '@/components/home/Card';
 import Footer from '@/components/home/Footer';
 import { Pagination } from '@/components/home/Pagination';
 import { microcms } from '@/libs/microcms';
-import { Blog, Post } from '@/types/blog';
+import { Blog, Post } from '@/utils/types/blog';
 
 type Props = {
   blog: Post[];
