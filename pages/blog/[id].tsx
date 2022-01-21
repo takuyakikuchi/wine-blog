@@ -1,10 +1,10 @@
-import dayjs from 'dayjs';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { microcms } from '@/libs/microcms';
+import { toJapanDate } from '@/utils/helper/dayjs';
 import { Post, Blog } from '@/utils/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
@@ -26,10 +26,7 @@ export default function BlogId({ post }: { post: Post }) {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:creator' content='@_takuyakikuchi' />
         <meta property='og:title' content='My Wine Blog' />
-        <meta
-          property='og:description'
-          content={`${title}(${dayjs(publishedAt).format('YYYY-MM-DD')})`}
-        />
+        <meta property='og:description' content={`${title}(${toJapanDate(publishedAt)})`} />
         <meta
           property='twitter:image'
           content={`${OGP_URL}/**${title}**.png?theme=dark&md=1&fontSize=100px&background=${OGP_IMAGE_URL}`}
@@ -38,7 +35,7 @@ export default function BlogId({ post }: { post: Post }) {
 
       <Header>
         <h1>{title || 'タイトルなし'}</h1>
-        {publishedAt && <p>{dayjs(publishedAt).format('YYYY-MM-DD')}</p>}
+        {publishedAt && <p>{toJapanDate(publishedAt)}</p>}
       </Header>
 
       <Main>
