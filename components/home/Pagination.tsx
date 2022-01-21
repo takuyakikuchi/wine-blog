@@ -65,12 +65,20 @@ export const Item = styled.div<{ active: boolean; disabled: boolean }>`
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
-  /* Active item */
-  color: ${({ active, theme }) => (active ? theme.colors.primary : 'inherit')};
-  border-color: ${({ active, theme }) => (active ? theme.colors.primary : 'inherit')};
+  ${(props) => {
+    if (props.active) {
+      return `
+        color: ${props.theme.colors.primary};
+        border-color: ${props.theme.colors.primary};
+      `;
+    }
 
-  /* Disabled item */
-  color: ${({ disabled, theme }) => (disabled ? theme.colors.lightGray : 'inherit')};
+    if (props.disabled) {
+      return `
+        color: ${props.theme.colors.lightGray};
+      `;
+    }
+  }}
 
   &:hover,
   &:focus,

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "lint:css": "stylelint './src/**/*.js'",
+    "lint:css": "stylelint './{components,pages}/**/*.{js,jsx,ts,tsx}'",
+    "lint:css:fix": "stylelint --fix './{components,pages}/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install"
   },
   "dependencies": {
