@@ -12,7 +12,7 @@ jobs:
           node-version: 12.x
       - name: create dot env file
         run: |
-          echo "MICRO_CMS_API_KEY=${{ secrets.MICRO_CMS_API_KEY}} > .env
+          echo "MICRO_CMS_API_KEY=${{ secrets.MICRO_CMS_API_KEY}}" > .env
       - name: npm install, build
         run: |
           npm install
