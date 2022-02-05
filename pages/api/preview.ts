@@ -7,7 +7,8 @@ const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   const draftKey = req?.query?.draftKey ? `${req.query.draftKey}` : '';
 
   if (!draftKey) {
-    return res.status(404).end();
+    // return res.status(404).end();
+    return;
   }
 
   const content: Post = await microcms.get({
