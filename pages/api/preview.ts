@@ -5,6 +5,7 @@ import { Post } from '@/utils/types/blog';
 const preview = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const contentId = req?.query?.slug ? `${req.query.slug}` : '';
   const draftKey = req?.query?.draftKey ? `${req.query.draftKey}` : '';
+  // test
 
   if (!draftKey) {
     return res.status(404).json({ message: 'Invalid draftKey' });
