@@ -31,7 +31,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "prettier": "^2.3.2",
-    "stylelint": "^14.2.0",
+    "stylelint": "^14.3.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
