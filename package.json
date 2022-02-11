@@ -15,13 +15,14 @@
   "dependencies": {
     "dayjs": "^1.10.7",
     "microcms-js-sdk": "^2.0.0",
-    "next": "12.0.8",
+    "next": "^12.0.10",
     "rc-pagination": "^3.1.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/node": "^17.0.17",
     "@types/react": "17.0.38",
     "@types/styled-components": "^5.1.22",
     "babel-plugin-styled-components": "^2.0.2",
