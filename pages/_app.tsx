@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { GoogleAnalytics, useGAPageview } from '../libs/gtag';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -17,12 +18,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2,  h3, h4, h5, h6 {
     margin: 0;
   }
 
@@ -51,8 +47,12 @@ const theme = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useGAPageview();
+
   return (
     <>
+      <GoogleAnalytics />
+
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />;
