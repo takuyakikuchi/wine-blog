@@ -1,12 +1,27 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import { event, GA_TRACKING_ID } from '../../libs/gtag';
 
 export default function Footer() {
+  const handleTwitterClick = () => {
+    if (!GA_TRACKING_ID) return;
+
+    event({
+      action: 'click',
+      label: 'redirect-to-twitter',
+    });
+  };
+
   return (
     <Wrapper>
       <Twitter>
         <span>Maintained by</span>
-        <a href='https://twitter.com/_takuyakikuchi' target='_blank' rel='noopener noreferrer'>
+        <a
+          href='https://twitter.com/_takuyakikuchi'
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={handleTwitterClick}
+        >
           <span>@_takuyakikuchi</span>
           <Image src='/twitter.svg' alt='Twitter Logo' width={16} height={16} />
         </a>

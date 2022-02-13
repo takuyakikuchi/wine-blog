@@ -14,17 +14,29 @@ const pageview = (url: string) => {
   });
 };
 
+type ClickTwitterEvent = {
+  action: 'click';
+  label: 'redirect-to-twitter';
+};
+
+export type Event = ClickTwitterEvent & {
+  category?: string;
+  value?: number;
+};
+
 /**
  * Measure GA Events
  * https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
-// export const event = ({ action, category, label, value }) => {
-//   window.gtag('event', action, {
-//     event_category: category,
-//     event_label: label,
-//     value: value,
-//   });
-// };
+export const event = ({ action, category, label, value }: Event) => {
+  if (!GA_TRACKING_ID) return;
+
+  window.gtag('event', action, {
+    event_category: category,
+    event_label: label ? JSON.stringify(label) : '',
+    value,
+  });
+};
 
 /**
  * Google Analytics
