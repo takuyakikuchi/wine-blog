@@ -1,6 +1,6 @@
-## About
+## About this repository
 
-This is a blog about wines I enjoy in daily life.
+This is the repository for a blog to comment on wine I tastes at home.
 
 [My Wine Blog](https://wine-blog.vercel.app/)
 
@@ -22,12 +22,14 @@ This is a blog about wines I enjoy in daily life.
   - [Alert](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-alerts-for-vulnerable-dependencies)
   - [Security update](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/about-alerts-for-vulnerable-dependencies)
   - [Version updates](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates)
-- Github Actions
+- CI/CD: Github Actions + Vercel
   - [CodeQL](https://codeql.github.com/?utm_source=pocket_mylist)
-- Others:
+  - [lighthouse-ci](https://github.com/GoogleChrome/lighthouse-ci)
+  - Vercel
+- Other libraries:
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
   - Pagination: [rc-pagination](https://github.com/react-component/pagination)
-  - Font: [M PLUS 1p](https://fonts.google.com/specimen/M+PLUS+1p?subset=japanese#about)
+  - Google Analytics
 
 ## Dev Road-map
 
