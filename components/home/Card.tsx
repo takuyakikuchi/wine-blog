@@ -31,7 +31,7 @@ export const CardAnchor = styled.a`
   padding: 24px;
   color: inherit;
   text-decoration: none;
-  border: 1px solid hsl(0deg 0% 92%);
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
