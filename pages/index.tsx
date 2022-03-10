@@ -65,18 +65,15 @@ export const Header = styled.header`
   text-align: center;
 
   h1 {
-    font-size: 4rem;
-  }
-  p {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media ${({ theme }) => theme.breakingPoints.tabletAndUp} {
     h1 {
-      font-size: 2rem;
+      font-size: 4rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 `;
@@ -96,9 +93,9 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 80%;
+  width: 95%;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 95%;
+  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
+    width: 80%;
   }
 `;

@@ -92,10 +92,13 @@ export const Wrapper = styled.div`
 
 export const Header = styled.header`
   text-align: center;
+  h1 {
+    font-size: 1.5rem;
+  }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
     h1 {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 `;
@@ -103,14 +106,14 @@ export const Header = styled.header`
 export const Main = styled.main`
   display: flex;
   flex-grow: 1;
-  width: 80%;
+  width: 90%;
   padding: 16px 0;
 
   img {
     max-width: 100%;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 90%;
+  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
+    width: 80%;
   }
 `;
