@@ -70,7 +70,7 @@ export const Header = styled.header`
 
   @media ${({ theme }) => theme.breakingPoints.tabletAndUp} {
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     p {
       font-size: 1.5rem;
