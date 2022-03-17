@@ -93,13 +93,7 @@ export const Wrapper = styled.div`
 export const Header = styled.header`
   text-align: center;
   h1 {
-    font-size: 1.5rem;
-  }
-
-  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
-    h1 {
-      font-size: 2rem;
-    }
+    font-size: clamp(1.5rem, 1.7vw + 1rem, 2.5rem);
   }
 `;
 

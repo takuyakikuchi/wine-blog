@@ -64,17 +64,13 @@ export const PageWrapper = styled.div`
 export const Header = styled.header`
   text-align: center;
 
+  /* https://courses.joshwcomeau.com/css-for-js/05-responsive-css/16-fluid-calculator */
   h1 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
   }
 
-  @media ${({ theme }) => theme.breakingPoints.tabletAndUp} {
-    h1 {
-      font-size: 3rem;
-    }
-    p {
-      font-size: 1.5rem;
-    }
+  p {
+    font-size: clamp(1rem, 2.2vw + 0rem, 1.5rem);
   }
 `;
 
