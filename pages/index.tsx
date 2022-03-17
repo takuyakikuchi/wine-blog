@@ -92,6 +92,6 @@ export const ListWrapper = styled.div`
   width: 95%;
 
   @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
-    width: 80%;
+    width: min(80%, calc(1100rem / 16));
   }
 `;

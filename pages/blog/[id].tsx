@@ -106,8 +106,4 @@ export const Main = styled.main`
   img {
     max-width: 100%;
   }
-
-  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
-    width: 80%;
-  }
 `;
