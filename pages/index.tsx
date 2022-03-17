@@ -64,20 +64,13 @@ export const PageWrapper = styled.div`
 export const Header = styled.header`
   text-align: center;
 
+  /* https://courses.joshwcomeau.com/css-for-js/05-responsive-css/16-fluid-calculator */
   h1 {
-    font-size: 4rem;
-  }
-  p {
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    h1 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1rem;
-    }
+  p {
+    font-size: clamp(1rem, 2.2vw + 0rem, 1.5rem);
   }
 `;
 
@@ -96,9 +89,9 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 80%;
+  width: 95%;
 
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 95%;
+  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
+    width: min(80%, calc(1100rem / 16));
   }
 `;

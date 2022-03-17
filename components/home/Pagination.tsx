@@ -57,9 +57,10 @@ export const StyledRcPagination = styled(RcPagination)`
 `;
 
 export const Item = styled.div<{ active: boolean; disabled: boolean }>`
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
+  --pagination-item-size: 32px;
+  width: var(--pagination-item-size);
+  height: var(--pagination-item-size);
+  line-height: var(--pagination-item-size);
   text-align: center;
   border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 10px;

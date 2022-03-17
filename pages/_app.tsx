@@ -41,8 +41,10 @@ const theme = {
     primary: 'hsl(283deg 34% 28%)',
     lightGray: 'hsl(0deg 0% 92%)',
   },
-  media: {
-    tablet: '600px',
+  breakingPoints: {
+    tabletAndUp: `(min-width: ${550 / 16}rem)`,
+    laptopAndUp: `(min-width: ${1100 / 16}rem)`,
+    desktopAndUp: `(min-width: ${1500 / 16}rem)`,
   },
 };
 

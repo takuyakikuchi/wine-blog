@@ -92,25 +92,18 @@ export const Wrapper = styled.div`
 
 export const Header = styled.header`
   text-align: center;
-
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    h1 {
-      font-size: 1.5rem;
-    }
+  h1 {
+    font-size: clamp(1.5rem, 1.7vw + 1rem, 2.5rem);
   }
 `;
 
 export const Main = styled.main`
   display: flex;
   flex-grow: 1;
-  width: 80%;
+  width: 90%;
   padding: 16px 0;
 
   img {
     max-width: 100%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 90%;
   }
 `;
