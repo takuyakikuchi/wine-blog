@@ -5,7 +5,6 @@ export interface Blog {
 
 export interface Post {
   aoc?: string;
-  blogType: Array<string>;
   body: string;
   country?: Array<string>;
   createdAt: Date;
