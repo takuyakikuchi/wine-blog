@@ -26,11 +26,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
   #__next {
     height: 100%;
   }
