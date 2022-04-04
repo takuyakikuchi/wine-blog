@@ -8,3 +8,15 @@ export const breakingPoints = {
   laptopAndUp: `(min-width: ${1100 / 16}rem)`,
   desktopAndUp: `(min-width: ${1500 / 16}rem)`,
 };
+
+export const darkTheme = {
+  backgroundColor: 'black',
+  textColor: 'white',
+  borderColor: 'white',
+};
+
+export const lightTheme = {
+  backgroundColor: 'white',
+  textColor: 'black',
+  borderColor: 'hsl(283deg 34% 28%)',
+};

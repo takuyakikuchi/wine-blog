@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ theme: any }>`
   html,
   body {
     height: 100%;
@@ -26,5 +26,17 @@ export const GlobalStyle = createGlobalStyle`
 
   #__next {
     height: 100%;
+  }
+
+  :root {
+    --bkg-color: ${(props) => props.theme.currentTheme.backgroundColor};
+    --text-color: ${(props) => props.theme.currentTheme.textColor};
+    --border-color: ${(props) => props.theme.currentTheme.borderColor};
+  }
+
+  body {
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
   }
 `;
