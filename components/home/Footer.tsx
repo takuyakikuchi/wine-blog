@@ -46,15 +46,16 @@ export const Wrapper = styled.footer`
   gap: 4px;
   width: 100%;
   padding: 24px;
-  border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border-top: 1px solid ${({ theme }) => theme.colorTheme.lightGray};
   font-size: 0.9rem;
 
   a {
-    color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
+    color: ${({ theme }) => theme.colorTheme.textColor};
 
     &:hover {
       text-decoration: revert;
+      color: ${({ theme }) => theme.colorTheme.primaryColor};
     }
   }
 `;

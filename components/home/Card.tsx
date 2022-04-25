@@ -25,7 +25,7 @@ export const CardAnchor = styled.a`
   padding: 24px;
   color: inherit;
   text-decoration: none;
-  border: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border: 1px solid ${({ theme }) => theme.colorTheme.lightGray};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
@@ -36,8 +36,8 @@ export const CardAnchor = styled.a`
   &:hover,
   &:focus,
   &:active {
-    color: ${({ theme }) => theme.colors.primary};
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colorTheme.primaryColor};
+    border-color: ${({ theme }) => theme.colorTheme.primaryColor};
   }
 
   @media ${({ theme }) => theme.breakingPoints.tabletAndUp} {

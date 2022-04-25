@@ -46,9 +46,9 @@ export default function BlogId({ post }: { post: Post }) {
         />
       </Main>
 
-      <footer>
+      <Footer>
         <Link href='/'>Back to home</Link>
-      </footer>
+      </Footer>
     </Wrapper>
   );
 }
@@ -105,5 +105,23 @@ export const Main = styled.main`
 
   img {
     max-width: 100%;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colorTheme.textColor};
+
+    &:hover {
+      color: ${({ theme }) => theme.colorTheme.primaryColor};
+    }
+  }
+`;
+
+export const Footer = styled.footer`
+  a {
+    color: ${({ theme }) => theme.colorTheme.textColor};
+
+    &:hover {
+      color: ${({ theme }) => theme.colorTheme.primaryColor};
+    }
   }
 `;

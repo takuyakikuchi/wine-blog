@@ -62,21 +62,21 @@ export const Item = styled.div<{ active: boolean; disabled: boolean }>`
   height: var(--pagination-item-size);
   line-height: var(--pagination-item-size);
   text-align: center;
-  border: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border: 1px solid ${({ theme }) => theme.colorTheme.lightGray};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
   ${(props) => {
     if (props.active) {
       return `
-        color: ${props.theme.colors.primary};
-        border-color: ${props.theme.colors.primary};
+        color: ${props.theme.colorTheme.primaryColor};
+        border-color: ${props.theme.colorTheme.primaryColor};
       `;
     }
 
     if (props.disabled) {
       return `
-        color: ${props.theme.colors.lightGray};
+        color: ${props.theme.colorTheme.lightGray};
       `;
     }
   }}
@@ -84,8 +84,8 @@ export const Item = styled.div<{ active: boolean; disabled: boolean }>`
   &:hover,
   &:focus,
   &:active {
-    color: ${({ theme }) => theme.colors.primary};
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colorTheme.primaryColor};
+    border-color: ${({ theme }) => theme.colorTheme.primaryColor};
   }
 
   &:hover {

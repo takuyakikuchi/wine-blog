@@ -29,14 +29,12 @@ export const GlobalStyle = createGlobalStyle<{ theme: any }>`
   }
 
   :root {
-    --bkg-color: ${(props) => props.theme.currentTheme.backgroundColor};
-    --text-color: ${(props) => props.theme.currentTheme.textColor};
-    --border-color: ${(props) => props.theme.currentTheme.borderColor};
+    --bkg-color: ${(props) => props.theme.colorTheme.backgroundColor};
+    --text-color: ${(props) => props.theme.colorTheme.textColor};
   }
 
   body {
     background-color: var(--bkg-color);
     color: var(--text-color);
-    border-color: var(--border-color);
   }
 `;
