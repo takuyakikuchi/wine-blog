@@ -2,8 +2,8 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Card from '@/components/home/Card';
-import Footer from '@/components/home/Footer';
 import { Pagination } from '@/components/home/Pagination';
+import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/utils/types/blog';
 
@@ -22,20 +22,20 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Header>
-        <h1>My Wine Blog</h1>
-        <p>I write a blog to record tasting comments and some learnings about wine!</p>
-      </Header>
+      <MaxWidthWrapper>
+        <Header>
+          <h1>My Wine Blog</h1>
+          <p>I write a blog to record tasting comments and some learnings about wine!</p>
+        </Header>
 
-      <Main>
-        <ListWrapper>
-          {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
-        </ListWrapper>
+        <Main>
+          <ListWrapper>
+            {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
+          </ListWrapper>
 
-        <Pagination currentPage={currentPage} totalCount={totalCount} />
-      </Main>
-
-      <Footer />
+          <Pagination currentPage={currentPage} totalCount={totalCount} />
+        </Main>
+      </MaxWidthWrapper>
     </PageWrapper>
   );
 }
@@ -57,7 +57,6 @@ export const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  padding: 0 8px;
 `;
 
 export const Header = styled.header`
@@ -88,9 +87,5 @@ export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 95%;
-
-  @media ${({ theme }) => theme.breakingPoints.laptopAndUp} {
-    width: min(80%, calc(1100rem / 16));
-  }
+  width: 100%;
 `;

@@ -3,6 +3,7 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
+import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
 import { microcms } from '@/libs/microcms';
 import { toJapanDate } from '@/utils/helper/dayjs';
 import { Post, Blog } from '@/utils/types/blog';
@@ -19,7 +20,7 @@ export default function BlogId({ post }: { post: Post }) {
   const { title, body, publishedAt } = post;
 
   return (
-    <Wrapper>
+    <>
       <Head>
         <title>{title || 'タイトルなし'}</title>
         <meta name='description' content='Blog post' />
@@ -33,23 +34,23 @@ export default function BlogId({ post }: { post: Post }) {
         />
       </Head>
 
-      <Header>
-        <h1>{title || 'タイトルなし'}</h1>
-        {publishedAt && <p>{toJapanDate(publishedAt)}</p>}
-      </Header>
+      <MaxWidthWrapper>
+        <Header>
+          <h1>{title || 'タイトルなし'}</h1>
+          {publishedAt && <p>{toJapanDate(publishedAt)}</p>}
+        </Header>
 
-      <Main>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${body}`,
-          }}
-        />
-      </Main>
+        <Main>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${body}`,
+            }}
+          />
 
-      <Footer>
-        <Link href='/'>Back to home</Link>
-      </Footer>
-    </Wrapper>
+          <Link href='/'>Back to home</Link>
+        </Main>
+      </MaxWidthWrapper>
+    </>
   );
 }
 
@@ -82,14 +83,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100%;
-  padding: 32px 8px;
-`;
-
 export const Header = styled.header`
   text-align: center;
   h1 {
@@ -99,8 +92,8 @@ export const Header = styled.header`
 
 export const Main = styled.main`
   display: flex;
-  flex-grow: 1;
-  width: 90%;
+  flex-direction: column;
+  align-items: center;
   padding: 16px 0;
 
   img {

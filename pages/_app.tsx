@@ -3,8 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import { GoogleAnalytics, useGAPageview } from '../libs/gtag';
 import { GlobalStyle } from '../styles/global';
 import { breakingPoints, darkTheme, lightTheme } from '../styles/themes';
+import Footer from '@/components/home/Footer';
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle';
-import TopeBar from '@/components/ui/TopBar';
+import TopBar from '@/components/ui/TopBar';
 import { useDarkMode } from '@/hooks/useDarkMode';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,10 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GoogleAnalytics />
       <ThemeProvider theme={{ breakingPoints, colorTheme }}>
         <GlobalStyle />
-        <TopeBar>
+        <TopBar>
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
-        </TopeBar>
-        <Component {...pageProps} />;
+        </TopBar>
+        <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );
