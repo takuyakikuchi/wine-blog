@@ -84,6 +84,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const Header = styled.header`
+  line-height: 2.5;
   text-align: center;
   h1 {
     font-size: clamp(1.5rem, 1.7vw + 1rem, 2.5rem);
