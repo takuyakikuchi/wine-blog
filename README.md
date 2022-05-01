@@ -30,6 +30,7 @@ This is the repository for a blog to comment on wine I tastes at home.
   - Date format: [dayjs](https://github.com/iamkun/dayjs/blob/dev/docs/ja/README-ja.md)
   - Pagination: [rc-pagination](https://github.com/react-component/pagination)
   - Google Analytics
+  - Icons: [React Feather Icons](https://github.com/feathericons/react-feather)
 
 ## Dev Road-map
 
