@@ -20,7 +20,7 @@ export default function BlogId({ post }: { post: Post }) {
   const { title, body, publishedAt } = post;
 
   return (
-    <>
+    <PageWrapper>
       <Head>
         <title>{title || 'タイトルなし'}</title>
         <meta name='description' content='Blog post' />
@@ -50,7 +50,7 @@ export default function BlogId({ post }: { post: Post }) {
           <Link href='/'>Back to home</Link>
         </Main>
       </MaxWidthWrapper>
-    </>
+    </PageWrapper>
   );
 }
 
@@ -82,6 +82,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   };
 };
+
+export const PageWrapper = styled.div`
+  padding-top: 32px;
+`;
 
 export const Header = styled.header`
   line-height: 2.5;

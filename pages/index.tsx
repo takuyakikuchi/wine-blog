@@ -57,6 +57,7 @@ export const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100%;
+  padding-top: 32px;
 `;
 
 export const Header = styled.header`

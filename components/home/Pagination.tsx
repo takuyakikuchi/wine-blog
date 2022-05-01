@@ -54,6 +54,7 @@ export const StyledRcPagination = styled(RcPagination)`
   display: flex;
   gap: 8px;
   list-style: none;
+  padding: 0;
 `;
 
 export const Item = styled.div<{ active: boolean; disabled: boolean }>`
