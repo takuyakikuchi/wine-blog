@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import RcPagination from 'rc-pagination';
 import styled from 'styled-components';
-import { PER_PAGE } from '@/utils/constants';
 
 const getElement = (page: number, type: string) => {
   switch (type) {
