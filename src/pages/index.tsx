@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
+import Card from '@/components/Card';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
 import MaxWidthWrapper from 'src/components/MaxWidthWrapper';
-import Card from 'src/components/home/Card';
 import { Pagination } from 'src/components/home/Pagination';
 
 type Props = {
