@@ -1,9 +1,9 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import { microcms } from '@/libs/microcms';
-import Home from '@/pages/index';
 import { PER_PAGE } from '@/utils/constants';
 import { Blog, Post } from '@/utils/types/blog';
+import Home from 'src/pages/index';
 
 const parsePageParams = (page: string | string[] | undefined) => {
   if (typeof page === 'string') {
