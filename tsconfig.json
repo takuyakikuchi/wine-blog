@@ -16,12 +16,7 @@
     // ------ Added -------
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/libs/*": ["libs/*"],
-      "@/pages/*": ["pages/*"],
-      "@/styles/*": ["styles/*"],
-      "@/utils/*": ["utils/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/*": ["src/*"]
     },
     "incremental": true
   },

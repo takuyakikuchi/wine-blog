@@ -1,9 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import { microcms } from '@/libs/microcms';
-import Home from '@/pages/index';
-import { PER_PAGE } from '@/utils/constants';
-import { Blog, Post } from '@/utils/types/blog';
+import { Blog, Post } from '@/types/blog';
+import Home from 'src/pages/index';
+
+const PER_PAGE = 10;
 
 const parsePageParams = (page: string | string[] | undefined) => {
   if (typeof page === 'string') {
@@ -31,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const totalPages = Math.ceil(data.totalCount / PER_PAGE) || 1;
 
-  const paths = pages(1, totalPages).map((page) => `/blog/page/${page}`);
+  const paths = pages(1, totalPages).map((page) => `/page/${page}`);
 
   return { paths, fallback: true };
 };

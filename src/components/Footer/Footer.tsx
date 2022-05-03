@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { event, GA_TRACKING_ID } from '../../libs/gtag';
-import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 
 export default function Footer() {
   const handleTwitterClick = () => {

@@ -3,10 +3,10 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
-import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import { toJapanDate } from '@/libs/dayjs';
 import { microcms } from '@/libs/microcms';
-import { toJapanDate } from '@/utils/helper/dayjs';
-import { Post, Blog } from '@/utils/types/blog';
+import { Post, Blog } from '@/types/blog';
 
 const OGP_URL = 'https://og-image-takuyakikuchi.vercel.app';
 const OGP_IMAGE_URL =

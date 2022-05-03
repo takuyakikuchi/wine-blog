@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Card from '@/components/home/Card';
-import { Pagination } from '@/components/home/Pagination';
-import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
+import Card from '@/components/Card';
+import Pagination from '@/components/Pagination';
 import { microcms } from '@/libs/microcms';
-import { Blog, Post } from '@/utils/types/blog';
+import { Blog, Post } from '@/types/blog';
+import MaxWidthWrapper from 'src/components/MaxWidthWrapper';
 
 type Props = {
   blog: Post[];

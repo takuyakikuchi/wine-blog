@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import RcPagination from 'rc-pagination';
 import styled from 'styled-components';
-import { PER_PAGE } from '@/utils/constants';
 
 const getElement = (page: number, type: string) => {
   switch (type) {
@@ -28,11 +27,11 @@ type Props = {
   totalCount: number;
 };
 
-export const Pagination = ({ currentPage, totalCount }: Props) => {
+export default function Pagination({ currentPage, totalCount }: Props) {
   const router = useRouter();
 
   const handlePageChange = (page: number) => {
-    router.push(`/blog/page/${page}`);
+    router.push(`/page/${page}`);
   };
 
   const itemRender = (page: number, type: string) => {
@@ -48,7 +47,7 @@ export const Pagination = ({ currentPage, totalCount }: Props) => {
   };
 
   return <StyledRcPagination itemRender={itemRender} total={totalCount} />;
-};
+}
 
 export const StyledRcPagination = styled(RcPagination)`
   display: flex;
