@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { toJapanDate } from '@/libs/dayjs';
-import { Post } from '@/utils/types/blog';
+import { Post } from '@/types/blog';
 
 export default function Card({ post }: { post: Post }) {
   return (
