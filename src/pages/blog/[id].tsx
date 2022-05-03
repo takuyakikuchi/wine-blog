@@ -3,8 +3,8 @@ import DefaultErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { toJapanDate } from '@/libs/dayjs';
 import { microcms } from '@/libs/microcms';
-import { toJapanDate } from '@/utils/helper/dayjs';
 import { Post, Blog } from '@/utils/types/blog';
 import MaxWidthWrapper from 'src/components/ui/MaxWidthWrapper';
 
