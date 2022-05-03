@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const totalPages = Math.ceil(data.totalCount / PER_PAGE) || 1;
 
-  const paths = pages(1, totalPages).map((page) => `/blog/page/${page}`);
+  const paths = pages(1, totalPages).map((page) => `/page/${page}`);
 
   return { paths, fallback: true };
 };

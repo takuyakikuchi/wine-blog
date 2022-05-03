@@ -31,7 +31,7 @@ export default function Pagination({ currentPage, totalCount }: Props) {
   const router = useRouter();
 
   const handlePageChange = (page: number) => {
-    router.push(`/blog/page/${page}`);
+    router.push(`/page/${page}`);
   };
 
   const itemRender = (page: number, type: string) => {
