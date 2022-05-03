@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
+import { DarkModeToggle } from '@/components/DarkModeToggle';
+import TopBar from '@/components/TopBar';
 import Footer from '@/components/home/Footer';
-import { DarkModeToggle } from '@/components/ui/DarkModeToggle';
-import TopBar from '@/components/ui/TopBar';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { GoogleAnalytics, useGAPageview } from '@/libs/gtag';
 import { GlobalStyle } from '@/styles/global';
