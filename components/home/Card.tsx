@@ -4,6 +4,7 @@ import { toJapanDate } from '@/utils/helper/dayjs';
 import { Post } from '@/utils/types/blog';
 
 export default function Card({ post }: { post: Post }) {
+  // test
   return (
     // passHref: https://nextjs.org/docs/messages/link-passhref
     <Link href={`/blog/${post.id}`} passHref>
