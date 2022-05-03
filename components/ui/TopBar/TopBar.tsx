@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
-import MaxWidthWrapper from 'src/components/ui/MaxWidthWrapper';
+import MaxWidthWrapper from '@/components/ui/MaxWidthWrapper';
 
 export default function TopBar({ children }: { children: ReactNode }) {
   return (
