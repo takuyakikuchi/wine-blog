@@ -47,7 +47,9 @@ export default function BlogId({ post }: { post: Post }) {
             }}
           />
 
-          <Link href='/'>Back to home</Link>
+          <Link href='/' passHref>
+            <BackToHome>Back to home</BackToHome>
+          </Link>
         </Main>
       </MaxWidthWrapper>
     </PageWrapper>
@@ -99,14 +101,15 @@ export const Header = styled.header`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 16px 0;
+  align-items: flex-start;
+  gap: 32px;
 
   img {
     max-width: 100%;
   }
 
   a {
+    align-self: center;
     color: ${({ theme }) => theme.colorTheme.textColor};
 
     &:hover {
@@ -115,12 +118,10 @@ export const Main = styled.main`
   }
 `;
 
-export const Footer = styled.footer`
-  a {
-    color: ${({ theme }) => theme.colorTheme.textColor};
+export const BackToHome = styled.a`
+  color: ${({ theme }) => theme.colorTheme.textColor};
 
-    &:hover {
-      color: ${({ theme }) => theme.colorTheme.primaryColor};
-    }
+  &:hover {
+    color: ${({ theme }) => theme.colorTheme.primaryColor};
   }
 `;

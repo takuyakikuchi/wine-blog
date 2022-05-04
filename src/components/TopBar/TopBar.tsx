@@ -5,7 +5,7 @@ import MaxWidthWrapper from 'src/components/MaxWidthWrapper';
 
 export default function TopBar({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <nav>
       <MaxWidthWrapper>
         <TopBarWrapper>
           <Link href='/' passHref>
@@ -14,7 +14,7 @@ export default function TopBar({ children }: { children: ReactNode }) {
           {children}
         </TopBarWrapper>
       </MaxWidthWrapper>
-    </div>
+    </nav>
   );
 }
 

@@ -30,11 +30,6 @@ export const GlobalStyle = createGlobalStyle<{ theme: any }>`
     flex-direction: column;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
   :root {
     --bkg-color: ${(props) => props.theme.colorTheme.backgroundColor};
     --text-color: ${(props) => props.theme.colorTheme.textColor};
