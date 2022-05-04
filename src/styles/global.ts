@@ -26,6 +26,8 @@ export const GlobalStyle = createGlobalStyle<{ theme: any }>`
 
   #__next {
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   :root {
