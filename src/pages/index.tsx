@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Card from '@/components/Card';
+import ListItem from '@/components/ListItem';
 import Pagination from '@/components/Pagination';
 import { microcms } from '@/libs/microcms';
 import { Blog, Post } from '@/types/blog';
@@ -29,12 +29,10 @@ export default function Home({ blog, currentPage = 1, totalCount }: Props) {
         </Header>
 
         <Main>
-          <ListWrapper>
-            {blog && blog.map((post: Post) => <Card key={post.id} post={post} />)}
-          </ListWrapper>
-
-          <Pagination currentPage={currentPage} totalCount={totalCount} />
+          <List>{blog && blog.map((post: Post) => <ListItem key={post.id} post={post} />)}</List>
         </Main>
+
+        <Pagination currentPage={currentPage} totalCount={totalCount} />
       </MaxWidthWrapper>
     </PageWrapper>
   );
@@ -52,12 +50,16 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
-  padding-top: 32px;
+  flex-grow: 1;
+  padding: 32px 0;
+
+  && > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
 `;
 
 export const Header = styled.header`
@@ -74,17 +76,11 @@ export const Header = styled.header`
 `;
 
 export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 32px;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  padding: 32px 0;
+  flex-grow: 1;
 `;
 
-export const ListWrapper = styled.div`
+export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;

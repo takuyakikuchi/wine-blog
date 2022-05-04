@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { toJapanDate } from '@/libs/dayjs';
 import { Post } from '@/types/blog';
 
-export default function Card({ post }: { post: Post }) {
+export default function ListItem({ post }: { post: Post }) {
   return (
     // passHref: https://nextjs.org/docs/messages/link-passhref
     <Link href={`/blog/${post.id}`} passHref>
-      <CardAnchor>
+      <Card>
         <h2>{post.title}</h2>
         <p>生産者: {post.producer}</p>
         <p>生産国: {post.country}</p>
@@ -15,16 +15,14 @@ export default function Card({ post }: { post: Post }) {
         <p>ヴィンテージ: {post.vintage}</p>
         <p>ぶどう品種: {post.grapes ? post.grapes.join(', ') : ''}</p>
         <p>投稿日: {toJapanDate(post.publishedAt)}</p>
-      </CardAnchor>
+      </Card>
     </Link>
   );
 }
 
-export const CardAnchor = styled.a`
+export const Card = styled.li`
   display: block;
   padding: 24px;
-  color: inherit;
-  text-decoration: none;
   border: 1px solid ${({ theme }) => theme.colorTheme.lightGray};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
