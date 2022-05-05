@@ -25,7 +25,7 @@ export default function Footer() {
             onClick={handleTwitterClick}
           >
             <span>Contact @</span>
-            <Image src='/twitter.svg' alt='Twitter Logo' width={16} height={16} />
+            <Image src='/twitter.svg' alt='Twitter logo' width={16} height={16} />
           </ContactAt>
           <p>
             このサイトはGoogle Analyticsを使用しています。
