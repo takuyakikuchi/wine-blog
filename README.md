@@ -14,4 +14,4 @@ The details is described in this article: [comming soon!]
 
 ## Dev Road-map
 
-https://github.com/users/takuyakikuchi/projects/2/views/6
+https://github.com/users/takuyakikuchi/projects/2
