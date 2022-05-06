@@ -105,7 +105,10 @@ export const Main = styled.main`
   gap: 32px;
 
   img {
+    height: 400px;
+    width: 100%;
     max-width: 100%;
+    object-fit: contain;
   }
 
   a {
