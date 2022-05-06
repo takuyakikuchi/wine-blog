@@ -46,14 +46,21 @@ export default function Pagination({ currentPage, totalCount }: Props) {
     );
   };
 
-  return <StyledRcPagination itemRender={itemRender} total={totalCount} />;
+  return (
+    <PaginationWrapper>
+      <RcPagination itemRender={itemRender} total={totalCount} />
+    </PaginationWrapper>
+  );
 }
 
-export const StyledRcPagination = styled(RcPagination)`
-  display: flex;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
+export const PaginationWrapper = styled.div`
+  ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export const Item = styled.div<{ active: boolean; disabled: boolean }>`
