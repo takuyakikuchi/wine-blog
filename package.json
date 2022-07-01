@@ -13,7 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "dayjs": "^1.10.7",
+    "dayjs": "^1.11.3",
     "microcms-js-sdk": "^2.0.0",
     "next": "^12.1.5",
     "rc-pagination": "^3.1.15",
