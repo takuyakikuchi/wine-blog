@@ -30,7 +30,7 @@
     "@types/styled-components": "^5.1.24",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0",
+    "eslint-config-next": "12.2.3",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
